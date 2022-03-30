@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.joma.encard.ui.fragment.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_wordFragment"
+            app:destination="@id/wordFragment">
+            <argument
+                android:name="category"
+                android:defaultValue='""'
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.joma.encard.ui.fragment.onBoard.OnBoardFragment"
+        android:label="fragment_on_board"
+        tools:layout="@layout/fragment_on_board" />
+    <fragment
+        android:id="@+id/addWordFragment"
+        android:name="com.joma.encard.ui.fragment.addWord.AddWordFragment"
+        android:label="fragment_add_word"
+        tools:layout="@layout/fragment_add_word" />
+    <fragment
+        android:id="@+id/wordFragment"
+        android:name="com.joma.encard.ui.fragment.word.WordFragment"
+        android:label="fragment_word"
+        tools:layout="@layout/fragment_word">
+
+        <argument
+            android:name="category"
+            android:defaultValue='""'
+            app:argType="string" />
+    </fragment>
+    <dialog
+        android:id="@+id/addCategoryFragment"
+        android:name="com.joma.encard.ui.fragment.addCategory.AddCategoryFragment"
+        android:label="fragment_add_category"
+        tools:layout="@layout/fragment_add_category" />
+
+</navigation>
